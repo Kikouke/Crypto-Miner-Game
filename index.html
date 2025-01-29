@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Miner Game</title>
+  <!-- Lien vers la bibliothèque Font Awesome pour les icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css"> <!-- Lien vers le CSS externe -->
+</head>
+<body>
+
+  <div id="game">
+    <h2>Crypto Miner Game</h2>
+
+    <!-- Affichage des cryptos avec icônes -->
+    <section id="cryptoDisplay">
+      <div class="cryptoItem">
+        <i class="fab fa-bitcoin"></i> <!-- Icône Bitcoin -->
+        <p>BTC: <span id="bitcoins">0</span></p>
+      </div>
+      <div class="cryptoItem">
+        <i class="fab fa-ethereum"></i> <!-- Icône Ethereum -->
+        <p>ETH: <span id="ethereums">0</span></p>
+      </div>
+      <div class="cryptoItem">
+        <i class="fas fa-coins"></i> <!-- Icône Litecoin -->
+        <p>LTC: <span id="litecoins">0</span></p>
+      </div>
+    </section>
+
+    <!-- Bouton central pour le minage -->
+    <div id="miningButtonContainer">
+      <button id="miningButton">
+        <i class="fas fa-cogs"></i> <!-- Icône représentant le minage -->
+      </button>
+    </div>
+
+    <!-- Particules animées -->
+    <div id="particlesContainer"></div>
+
+    <!-- Bouton pour ouvrir et fermer le menu -->
+    <button id="openMenuBtn" class="openMenuBtn">
+      <i class="fas fa-bars"></i> <!-- Icône Menu -->
+    </button>
+
+    <!-- Menu déroulant -->
+    <div id="slidingMenu" class="slidingMenu">
+      <!-- Contenu du menu -->
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- Boutons avec des icônes pour afficher les machines de minage et les planètes -->
+      <button id="showMachinesBtn" class="menuButton">
+        <i class="fas fa-cogs"></i> <!-- Icône Machine de Minage -->
+        Machines de Minage
+      </button>
+
+      <button id="showPlanetsBtn" class="menuButton">
+        <i class="fas fa-planet"></i> <!-- Icône Planète -->
+        Planètes
+      </button>
+
+      <!-- Contenu des machines de minage -->
+      <div id="machinesContainer" style="display: none;">
+        <h3>Machines de Minage</h3>
+        <div id="btcMachineContainer">
+          <h4>Machine BTC</h4>
+          <button id="buyBTCMachineBtn" disabled>Acheter une machine BTC (10 BTC)</button>
+          <div class="progressBarContainer">
+            <div class="progressBar" id="btcProgressBar"></div>
+            <span id="btcProgressText">0 / 1024</span>
+          </div>
+        </div>
+        <div id="ethMachineContainer">
+          <h4>Machine ETH</h4>
+          <button id="buyETHMachineBtn" disabled>Acheter une machine ETH (100 BTC)</button>
+          <div class="progressBarContainer">
+            <div class="progressBar" id="ethProgressBar"></div>
+            <span id="ethProgressText">0 / 1024</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenu des planètes -->
+      <div id="planetsContainer" style="display: none;">
+        <h3>Planètes</h3>
+        <p>Planète actuelle : <span id="planet">Terre (1)</span></p>
+        <p>Multiplicateur : <span id="multiplicator">x1</span></p>
+        <button id="prevPlanetBtn">Retourner à la planète précédente</button>
+        <button id="nextPlanetBtn">Aller à la planète suivante</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+<script src="script.js"></script> <!-- Lien vers le JS externe -->
